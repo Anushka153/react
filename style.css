@@ -1,3 +1,10 @@
-#heading {
-  color: red;
+.star::before{
+  content: '\2606';
+  font-size: 20px;
+}
+
+.starRated::before{
+  content: '\2606';
+  font-size: 20px;
+  color: darkorange
 }
