@@ -22,11 +22,13 @@ const Body = () => {
     );
 
     const json = await data.json();
-    console.log('data', data, json)
 
-    setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setListOfRestraunt(json?.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+    setFilteredRestaurant(json?.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants);
   };
+
+  console.log('data', filteredRestaurant, listOfRestaurants)
+
 
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />
@@ -79,8 +81,8 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {filteredRestaurant?.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+        {filteredRestaurant && filteredRestaurant?.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
