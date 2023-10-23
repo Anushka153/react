@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./src/components/Body";
 import Header from "./src/components/Header";
-import Timer from "./src/components/Timer";
+import Timer from "./src/components/star/Timer";
 
 const AppLayout = () => {
   return (
     <div className="app">
-      <Header />
+      {/* <Header /> */}
       <Body />
       {/* <Timer/> */}
     </div>	  
